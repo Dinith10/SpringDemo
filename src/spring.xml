@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
+
+<beans>
+
+     <bean id = "triangle2" class = "mainPackage.Triangle">
+
+        <property name="type" value = "Equalateral"/>
+
+    </bean>
+
+    <bean id = "triangle" class = "mainPackage.Triangle">
+
+        <!--   <property name="type" value = "Equalateral"/> -->
+        <constructor-arg value="ABCD"/>
+
+    </bean>
+
+    <bean id="triangle3" class = "mainPackage.Triangle">
+
+        <constructor-arg value="EFGH"/>
+        <constructor-arg value="20"/>
+
+
+    </bean>
+    <bean id="triangle4" class = "mainPackage.Triangle">
+
+        <constructor-arg type="int" value="20"/>
+
+
+    </bean>
+
+    <bean id = "triangle5" class = "mainPackage.Triangle">
+        <constructor-arg type="java.lang.String" value = "12"/>
+        <!-- String is an Object data type so you need to give compleat package name to type -->
+        <constructor-arg type ="int" value="30"/>
+
+
+    </bean>
+
+    <bean id = "triangle6" class = "mainPackage.Triangle">
+
+        <constructor-arg index = "0" value = "IJKLM"/>
+        <constructor-arg index = "1" value = "20"/>
+
+
+    </bean>
+
+</beans>
