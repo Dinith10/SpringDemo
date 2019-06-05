@@ -4,13 +4,66 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id = "parentTriangle" class = "mainPackage.Triangle2" >
+    <bean id = "parentCircle" class = "mainPackage.Circle" abstract = "true"> <!-- If we specify abstract, spring not create instances in this bean definition it act as a template -->
+        <property name="intvalues">
+
+            <list>
+                    <value>700</value>
+            </list>
+
+        </property>
+
+        <property name="points">
+            <list>
+
+                <ref bean = "pointA"/>
+                <ref bean = "pointB"/>
+                <ref bean = "pointC"/>
+
+            </list>
+
+        </property>
+
+
+
+    </bean>
+
+
+    <bean id = "childCircle" class = "mainPackage.Circle" parent = "parentCircle" >
+
+        <property name="intvalues" >
+            <list merge="true" > <!-- If we didn't specify merge = true in this list it will override parent list but if we do specify
+                                                merge = true it will append new list elements to existing parent's list -->
+                <value> 123 </value>
+                <value> 457 </value>
+
+            </list>
+
+
+        </property>
+
+
+        <property name="points"> <!-- in heare parent list is overridden by child's list becouse we didnt specify merge = true in child's list -->
+            <list>
+                <ref bean = "pointA"/>
+
+
+            </list>
+
+
+        </property>
+
+    </bean>
+
+
+
+    <bean id = "parentTriangle" class = "mainPackage.Triangle2"  scope = "prototype">
         <property name="pointA" ref = "pointA"/>
 
 
     </bean>
 
-    <bean id = "triangle7" class = "mainPackage.Triangle2" parent = "parentTriangle">
+    <bean id = "triangle7" class = "mainPackage.Triangle2" parent = "parentTriangle" scope = "prototype">
 
 
         <property name="pointB" ref = "pointB"/>
@@ -20,6 +73,24 @@
     </bean>
 
 
+    <bean id = "triangle77" class = "mainPackage.Triangle2" parent = "parentTriangle" >
+
+         <property name="pointB" ref = "pointB"/>
+         <property name="pointC">
+            <bean class = "mainPackage.Point" >
+
+                <property name="x" value = "200"/>
+                <property name="y" value = "500"/>
+
+
+            </bean>
+
+
+
+        </property>
+
+
+    </bean>
 
     <bean id = "pointA" class = "mainPackage.Point">
 

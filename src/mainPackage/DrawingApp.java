@@ -57,7 +57,9 @@ public class DrawingApp {
 
         ApplicationContext context8 = new ClassPathXmlApplicationContext("spring7.xml");
 
-        Triangle2 beanDefinitionInheritance = (Triangle2) context8.getBean("triangle7");
+        Triangle2 beanDefinitionInheritance = (Triangle2) context8.getBean("triangle77");
+        beanDefinitionInheritance.draw();
+
 
 
     }
