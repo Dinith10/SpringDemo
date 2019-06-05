@@ -34,6 +34,18 @@ public class DrawingApp {
             circle.draw();
 
 
+        ApplicationContext context4 = new ClassPathXmlApplicationContext("spring4");
+
+            TriangleAutowiring triangleAutowiring = (TriangleAutowiring) context4.getBean("autowiredTriangle");
+            triangleAutowiring.draw();
+
+
+        ApplicationContext context5 = new ClassPathXmlApplicationContext("spring4");
+
+        TriangleAutowiring overridedAutowiredObject = (TriangleAutowiring) context4.getBean("OverrideAutowiredObject");
+        overridedAutowiredObject.draw();
+
+
 
 
     }

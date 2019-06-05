@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
+
+<beans>
+
+    <bean id = "autowiredTriangle" class = "mainPackage.TriangleAutowiring" autowire = "byName">
+
+
+
+
+    </bean>
+
+
+    <bean id = "OverrideAutowiredObject" class = "mainPackage.TriangleAutowiring" autowire = "byName">
+
+        <property name="pointA" ref = "abcd"/>
+
+    </bean>
+
+    <bean id = "pointA" class="mainPackage.Point">
+
+        <property name="x" value="12"/>
+        <property name="y" value="21"/>
+
+    </bean>
+
+
+
+    <bean id = "pointB" class = "mainPackage.Point">
+
+        <property name="x" value="0"/>
+        <property name="y" value="20"/>
+
+
+    </bean>
+
+    <bean id = "pointC" class="mainPackage.Point">
+
+
+        <property name="x" value="20"/>
+        <property name="y" value="0"/>
+
+    </bean>
+
+
+    <bean id = "abcd" class="mainPackage.Point">
+
+        <property name="x" value="122"/>
+        <property name="y" value="212"/>
+
+    </bean>
+
+</beans>
