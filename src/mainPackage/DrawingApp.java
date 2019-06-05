@@ -3,6 +3,7 @@ package mainPackage;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 
@@ -59,6 +60,15 @@ public class DrawingApp {
 
         Triangle2 beanDefinitionInheritance = (Triangle2) context8.getBean("triangle77");
         beanDefinitionInheritance.draw();
+
+
+
+
+        AbstractApplicationContext context10 = new ClassPathXmlApplicationContext("spring8.xml");
+        context10.registerShutdownHook();
+
+        Triangle3 abstactApplicationContext = (Triangle3) context10.getBean("triangle3");
+        abstactApplicationContext.draw();
 
 
 
