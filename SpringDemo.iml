@@ -9,6 +9,9 @@
         <fileset id="fileset2" name="Spring2" removed="false">
           <file>file://$MODULE_DIR$/src/spring2.xml</file>
         </fileset>
+        <fileset id="fileset3" name="Spring3" removed="false">
+          <file>file://$MODULE_DIR$/src/spring3.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>

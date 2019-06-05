@@ -22,6 +22,20 @@ public class DrawingApp {
 
 
 
+       ApplicationContext context2 = new ClassPathXmlApplicationContext("spring2.xml");
+
+        Squre squre = (Squre) context2.getBean("squre2");
+        squre.draw();
+
+
+        ApplicationContext context3 = new ClassPathXmlApplicationContext("spring3.xml");
+
+            Circle circle = (Circle) context3.getBean("circle");
+            circle.draw();
+
+
+
+
     }
 
 
