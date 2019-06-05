@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "parentTriangle" class = "mainPackage.Triangle2" >
+        <property name="pointA" ref = "pointA"/>
+
+
+    </bean>
+
+    <bean id = "triangle7" class = "mainPackage.Triangle2" parent = "parentTriangle">
+
+
+        <property name="pointB" ref = "pointB"/>
+        <property name="pointC" ref = "pointC"/>
+
+
+    </bean>
+
+
+
+    <bean id = "pointA" class = "mainPackage.Point">
+
+     <property name="x" value="700"/>
+     <property name="y" value="800"/>
+
+    </bean>
+
+
+    <bean id = "pointB" class="mainPackage.Point">
+        <property name="x" value="770"/>
+
+        <property name="y" value="880"/>
+
+
+    </bean>
+
+
+    <bean id="pointC" class="mainPackage.Point">
+        <property name="x" value="220"/>
+
+        <property name="y" value="250"/>
+
+
+
+    </bean>
+
+
+</beans>

@@ -3,7 +3,7 @@
 
 <beans>
 
-    <bean id = "autowiredTriangle" class = "mainPackage.TriangleAutowiring" autowire = "byName">
+    <bean id = "autowiredTriangle" class = "mainPackage.TriangleAutowiring" autowire = "byName" scope = "prototype">
 
 
 
@@ -11,7 +11,7 @@
     </bean>
 
 
-    <bean id = "OverrideAutowiredObject" class = "mainPackage.TriangleAutowiring" autowire = "byName">
+    <bean id = "OverrideAutowiredObject" class = "mainPackage.TriangleAutowiring" autowire = "byName" scope = "prototype">
 
         <property name="pointA" ref = "abcd"/>
 
@@ -26,7 +26,7 @@
 
 
 
-    <bean id = "pointB" class = "mainPackage.Point">
+    <bean id = "pointB" class = "mainPackage.Point" scope = "singleton">
 
         <property name="x" value="0"/>
         <property name="y" value="20"/>
@@ -34,7 +34,7 @@
 
     </bean>
 
-    <bean id = "pointC" class="mainPackage.Point">
+    <bean id = "pointC" class="mainPackage.Point" scope = "prototype">
 
 
         <property name="x" value="20"/>

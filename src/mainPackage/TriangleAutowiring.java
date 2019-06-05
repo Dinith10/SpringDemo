@@ -7,6 +7,12 @@ public class TriangleAutowiring {
     private Point pointC ;
 
 
+    public TriangleAutowiring() {
+
+        System.out.println("ABCADHhjgjhsaghjfasgfgahdgfjhda");
+
+
+    }
 
     public Point getPointA() {
         return pointA;
