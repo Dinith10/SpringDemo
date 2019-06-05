@@ -4,6 +4,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+   <bean class = "mainPackage.DisplayNameBeanPostProcessor">
+
+
+
+   </bean>
+
+
+
+
+
     <bean id = "parentBean" class = "mainPackage.Triangle3" autowire = "byName" abstract = "true" scope = "prototype" >
         <property name="pointB" >
 
@@ -17,7 +27,7 @@
 
     </bean>
 
-    <bean id = "childBean" class = "mainPackage.Triangle3" autowire = "byName" parent = "parentBean" >
+    <bean id = "childBean" scope = "singleton" class = "mainPackage.Triangle3" autowire = "byName" parent = "parentBean" >
 
 
 
