@@ -4,11 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-   <bean class = "mainPackage.DisplayNameBeanPostProcessor">
+   <bean class = "mainPackage.DisplayNameBeanPostProcessor"/>
 
 
 
-   </bean>
 
 
 
@@ -69,5 +68,21 @@
 
 
     </bean>
+
+    <bean  id = "triangleApplicationProperties" class = "mainPackage.Point">
+
+        <property name="x" value="${pointA.pointX}"/>
+        <property name="y" value="${pointA.pointY}"/>
+
+
+    </bean>
+
+    <bean class = "org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+
+        <property name="location" value="classpath:pointsConfig.properties"/>
+
+    </bean>
+
+    <bean class="mainPackage.MyBeanFactoryPostProcessor"/>
 
 </beans>
