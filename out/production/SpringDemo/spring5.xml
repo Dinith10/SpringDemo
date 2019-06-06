@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
+
+<beans>
+
+
+
+    <bean id = "triangle" class = "mainPackage.Triangle2" scope = "prototype" autowire="byName">
+
+        <property name="pointA">
+
+            <bean class="mainPackage.Point" >
+
+                <property name="x" value="10"/>
+                <property name="y" value="20"/>
+
+            </bean>
+
+        </property>
+
+        <property name="pointB" ref = "POINTB"/>
+
+
+    </bean>
+
+
+
+    <bean id = "pointC" class = "mainPackage.Point">
+
+        <property name="x" value="100"/>
+        <property name="y" value="200"/>
+
+
+    </bean>
+
+
+
+    <bean id = "POINTB" class="mainPackage.Point">
+
+        <property name="x" value="70"/>
+        <property name="y" value="80"/>
+
+
+    </bean>
+
+
+
+
+</beans>
