@@ -38,7 +38,7 @@
 
     <bean id = "triangle3" class = "mainPackage.Triangle3" autowire = "byName" scope = "prototype">
 
-        <property name="pointA" ref = "pointA"/>
+        <property name="pointA" ref = "triangleApplicationProperties"/>
         <property name="pointB">
             <bean class="mainPackage.Point">
 
@@ -71,7 +71,7 @@
 
     <bean  id = "triangleApplicationProperties" class = "mainPackage.Point">
 
-        <property name="x" value="${pointA.pointX}"/>
+        <property name="x" value="${x}"/>
         <property name="y" value="${pointA.pointY}"/>
 
 
